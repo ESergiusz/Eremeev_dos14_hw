@@ -1,0 +1,47 @@
+
+sudo nano ~/.bash_aliases
+
+alias start_yc_vm='yc compute instance start esergiusz'
+
+alias stop_yc_vm='yc compute instance stop esergiusz'
+
+user@Ubuntu:~$ stop_yc_vm
+done (17s)
+
+user@Ubuntu:~$ start_yc_vm
+done (22s)
+id: epdn9kkdmug6u9b5av2m
+folder_id: b1gmerarb1tic8opr270
+created_at: "2023-02-27T14:20:20Z"
+name: esergiusz
+zone_id: ru-central1-b
+platform_id: standard-v2
+resources:
+  memory: "4294967296"
+  cores: "2"
+  core_fraction: "50"
+status: RUNNING
+metadata_options:
+  gce_http_endpoint: ENABLED
+  aws_v1_http_endpoint: ENABLED
+  gce_http_token: ENABLED
+  aws_v1_http_token: DISABLED
+boot_disk:
+  mode: READ_WRITE
+  device_name: epd9m9vi61l6292b0p7b
+  auto_delete: true
+  disk_id: epd9m9vi61l6292b0p7b
+network_interfaces:
+  - index: "0"
+    mac_address: d0:0d:17:4d:28:db
+    subnet_id: e2l2df4ef7jjdt4ceurf
+    primary_v4_address:
+      address: 192.168.1.25
+      one_to_one_nat:
+        address: 130.193.52.156
+       ip_version: IPV4
+fqdn: esergiusz.ru-central1.internal
+scheduling_policy: {}
+network_settings:
+  type: STANDARD
+placement_policy: {}
