@@ -1,0 +1,22 @@
+1. yc vpc network create --name esa
+2. yc vpc subnet create --name esa-subnet-1 \
+  --zone ru-central1-b \
+  --range 192.168.1.0/24 \
+  --network-name esa
+3. yc compute instance create --name esergiusz \
+--hostname esergiusz \
+--zone ru-central1-b \
+--create-boot-disk image-folder-id=standard-images,image-family=ubuntu-2204-lts,size=30,type=network-hdd \
+--network-interface subnet-name=esa-subnet-1,nat-ip-version=ipv4 \
+--memory 4 --cores 2 --core-fraction 50 \
+--ssh-key ~/.ssh/id_rsa.pub \
+--async
+
+4. sh yc-user@84.252.136.122
+5. sudo useradd -m -d /home/eremeev -s /bin/bash eremeev
+sudo su - eremeev
+mkdir .ssh
+touch .ssh/authorized_keys
+ssh-keygen -t ed25519
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE+9CsXDZAWZb/FRNmHMluh9k49PiOKHVja3BV3bjXzN" > /home/eremeev/.ssh/authorized_keys
+chmod 700 ~/.ssh
