@@ -1,0 +1,28 @@
+1. FreeMem.service
+
+[Unit]
+Description=FreeMemory
+After=syslog.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/bash -u /home/user/script_ip.sh
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+2. user@Ubuntu:~$ sudo systemctl enable FreeMem
+Created symlink /etc/systemd/system/multi-user.target.wants/FreeMem.service → /etc/systemd/system/FreeMem.service.
+
+3. user@Ubuntu:~$ sudo systemctl status FreeMem
+● FreeMem.service - FreeMemory
+     Loaded: loaded (/etc/systemd/system/FreeMem.service; enabled; vendor preset: enabled)
+     Active: activating (auto-restart) since Fri 2023-03-10 18:03:52 +03; 2s ago
+    Process: 7104 ExecStart=/usr/bin/bash -u /home/user/script_ip.sh (code=exited, status=0/SUCCESS)
+   Main PID: 7104 (code=exited, status=0/SUCCESS)
+        CPU: 25ms
+Mar 10 18:03:52 Ubuntu systemd[1]: FreeMem.service: Deactivated successfully.
