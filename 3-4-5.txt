@@ -1,0 +1,20 @@
+user@Ubuntu:~/Desktop$ ping google.com > /dev/null 2>&1 & 
+[1] 13664
+user@Ubuntu:~/Desktop$ jobs
+[1]+  Running                 ping google.com > /dev/null 2>&1 &
+
+
+new session
+
+user@Ubuntu:~/Desktop$ ps -q 13664
+    PID TTY          TIME CMD
+  13664 pts/2    00:00:00 ping
+user@Ubuntu:~/Desktop$ jobs
+user@Ubuntu:~/Desktop$ 
+
+user@Ubuntu:~/Desktop$ kill -9 13664
+user@Ubuntu:~/Desktop$ kill -9 13664
+bash: kill: (13664) - No such process
+user@Ubuntu:~/Desktop$ ps -q 13664
+    PID TTY          TIME CMD
+user@Ubuntu:~/Desktop$ 
