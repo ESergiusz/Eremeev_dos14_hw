@@ -1,0 +1,7 @@
+yc-user@esergiusz:~$ ps -u eremeev
+    PID TTY          TIME CMD
+  27277 ?        00:00:00 ping
+yc-user@esergiusz:~$ sudo killall -u eremeev
+yc-user@esergiusz:~$ ps -u eremeev
+    PID TTY          TIME CMD
+yc-user@esergiusz:~$ 
