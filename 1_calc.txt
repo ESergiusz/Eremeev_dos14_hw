@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Input:" $1 $2 $3
+case $1 in
+[Aa]dd) echo "Result: $(bc<<<"scale=3;$2+$3")"  ;;
+[Ss]ub)  echo "Result: $(bc<<<"scale=3;$2-$3")" ;;
+[Mm]ult) echo "Result: $(bc<<<"scale=3;$2*$3")" ;;
+[Dd]iv) echo "Result: $(bc<<<"scale=3;$2/$3")" ;;
+*) echo "Wrong!!! Use div, add, sub or mult. Then 2 digits separated by a space. Example: div 6 3"
+  esac
