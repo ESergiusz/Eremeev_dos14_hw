@@ -1,9 +1,0 @@
-1. eremeev@esergiusz:~$ sudo chattr +i immortalfile
-2. eremeev@esergiusz:~$ lsattr immortalfile
-----i---------e------- immortalfile
-3. root@esergiusz:/home/eremeev# rm -rf immortalfile
-rm: cannot remove 'immortalfile': Operation not permitted
-
-
-
-
