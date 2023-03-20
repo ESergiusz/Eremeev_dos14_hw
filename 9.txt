@@ -1,7 +1,0 @@
-user@Ubuntu:~/Desktop$ cat /home/user/lesson_5.sh
-#!/bin/bash
-echo "$(date) Количество процессов у пользователя $(whoami): $(ps -u| wc -l)"
-echo "$(date) Средняя загрузка за 15 мин: $(uptime | awk '{print $10}')"
-echo "$(date) Количество свободной памяти: $(free --mega | grep Mem | awk '{print $4}') MB"
-echo "$(date) Размер свободного места в корне: $(df -h | grep '/$' | awk '{print $4}')"
-exituser@Ubuntu:~/Desktop$ 
