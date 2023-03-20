@@ -1,9 +1,0 @@
-#!/bin/bash
-awk '$3=="kB"{$2=$2/1024;$3="MB"} 1' /proc/meminfo | grep MemFree | sed 's/MemFree/Свободная память/'
-
-ifconfig eth0 | grep 'inet ' | awk '{print "IP адрес: " $2}'
-
-cpu=$(top -bn1 | awk '/Cpu/ {print $2}')
-echo "Загруженность процессора: $cpu %"
-exit
-

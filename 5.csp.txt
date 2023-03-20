@@ -1,1 +1,0 @@
-scp /home/user/info.sh eremeev@158.160.0.176:/home/eremeev
