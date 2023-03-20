@@ -1,3 +1,0 @@
-#!/bin/bash
-echo "Input text: "; read vvod
-echo "Text without spaces:"; echo $vvod | tr -d ' '
