@@ -1,0 +1,21 @@
+#!/bin/bash
+#Введены слова переводятся в акроним
+usage () {
+  echo "Подайте минимум 2 слова на вход скрипта через пробел "
+  exit 1
+}
+# функция, которая перебирает значения массива и делает акроним.
+acronim () {
+  for i in "${arr[@]}"
+  do
+  echo "$i" | tr '-' ' '  | sed 's/\(.\)\w*\W*/\l\1/g' | tr '[:lower:]' '[:upper:]'
+  done
+}
+main () {
+   if [[ $# -lt 2 ]]; then
+    usage
+    fi
+  declare -a arr=(); arr="$*"
+  acronim
+}
+main "$@"
