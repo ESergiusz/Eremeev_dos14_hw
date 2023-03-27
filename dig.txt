@@ -1,0 +1,31 @@
+Команда dig (domain information groper) —  инструмент для опроса DNS-серверов. С ее помощью можно запрашивать информацию о различных записях DNS, включая адреса хостов, почтовые обмены и серверы имен. 
+
+Example:
+user@Ubuntu:~/Desktop$ dig google.by +short
+142.250.186.196
+
+
+#узнаем имя домена
+user@Ubuntu:~/Desktop$ dig -x 142.250.186.196 +short
+waw07s05-in-f4.1e100.net.
+
+user@Ubuntu:~/Desktop$ dig -x 142.250.186.196
+
+; <<>> DiG 9.18.1-1ubuntu1.3-Ubuntu <<>> -x 142.250.186.196
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 59885
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;196.186.250.142.in-addr.arpa.	IN	PTR
+
+;; ANSWER SECTION:
+196.186.250.142.in-addr.arpa. 3984 IN	PTR	waw07s05-in-f4.1e100.net.
+
+;; Query time: 4 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Mon Mar 27 11:58:17 CEST 2023
+;; MSG SIZE  rcvd: 95

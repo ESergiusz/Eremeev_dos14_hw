@@ -1,0 +1,14 @@
+Nmap (УNetwork MapperФ) Ч инструмент с открытым исходным кодом дл€ исследовани€ сети и аудита безопасности. ќн был разработан дл€ быстрого сканировани€ больших сетей, хот€ прекрасно работает и с отдельными хостами. Nmap использует raw IP-пакеты дл€ определени€, какие хосты доступны в сети, какие сервисы (им€ и верси€ приложени€) на них запущены, какие операционные системы (и версии ќ—) на них установлены, какие типы пакетных фильтров/межсетевых экранов используютс€, и дес€тки других характеристик. `
+Example:
+user@Ubuntu:~/Desktop$ nmap google.by
+Starting Nmap 7.80 ( https://nmap.org ) at 2023-03-27 12:18 CEST
+Nmap scan report for google.by (142.250.186.196)
+Host is up (0.049s latency).
+Other addresses for google.by (not scanned): 2a00:1450:401b:808::2004
+rDNS record for 142.250.186.196: waw07s05-in-f4.1e100.net
+Not shown: 998 filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 18.65 seconds
