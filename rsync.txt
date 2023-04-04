@@ -1,0 +1,2 @@
+#Берем данные из первых трех заданий и синхронизируем с машиной на Yandex Cloud
+rsync -az --min-size=0.4M /tmp/folder/ eremeev@130.193.42.94:/tmp/folder_sync/ 
