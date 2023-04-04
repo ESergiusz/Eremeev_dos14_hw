@@ -1,0 +1,4 @@
+﻿#Скрипт генерации 100 текстовых файлов по 1mb.
+for i in {1..100}; do 
+dd if=/dev/urandom of=/dev/stdout count=1 bs=M | base64>/tmp/folder/1M_$i; 
+done

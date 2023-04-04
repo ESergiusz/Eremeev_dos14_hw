@@ -1,0 +1,5 @@
+﻿1. Генерим файл на 2 мегабайта
+dd if=/dev/urandom of=/dev/stdout count=2 bs=M 2>/dev/null | base64>/tmp/folder2/2M
+2. Открываем созданный файл
+vim 2M
+3. Внутри vim вводим команду :$s/[aA]/ /g

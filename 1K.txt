@@ -1,0 +1,4 @@
+﻿#Скрипт генерации 500 текстовых файлов размером по 1кб
+for i in {1..500}; do 
+dd if=/dev/urandom of=/dev/stdout count=1 bs=K | base64>/tmp/folder/1K_$i;
+done
