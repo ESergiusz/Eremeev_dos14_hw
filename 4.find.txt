@@ -1,0 +1,5 @@
+﻿sudo find / -type f -mtime +1 \( -user user -o -user root \) -exec ls -l {} \; > /tmp/find_result
+
+# -type f поиск только файлов
+# -mtime +1 время модификации за последнии сутки
+# -user user -o -user root  поиск владельца файла либо user либо root

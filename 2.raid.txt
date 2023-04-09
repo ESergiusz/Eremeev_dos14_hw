@@ -1,0 +1,69 @@
+﻿# Инициализируем физ. том для использования lvm.
+user@Ubuntu:~/Desktop$ sudo pvcreate /dev/sdb1
+  Physical volume "/dev/sdb1" successfully created.
+
+user@Ubuntu:~/Desktop$ sudo pvcreate /dev/sdc1
+  Physical volume "/dev/sdc1" successfully created.
+
+#Создаем группу томов с именем vg0.
+user@Ubuntu:~/Desktop$ sudo vgcreate vg0 /dev/sdb1 /dev/sdc1
+  Volume group "vg0" successfully created
+
+# Смотрим что получилось.
+user@Ubuntu:~/Desktop$ sudo vgdisplay
+  --- Volume group ---
+  VG Name               vg0
+  System ID             
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  1
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                0
+  Open LV               0
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               9.99 GiB
+  PE Size               4.00 MiB
+  Total PE              2558
+  Alloc PE / Size       0 / 0   
+  Free  PE / Size       2558 / 9.99 GiB
+  VG UUID               cLLjvw-kAIA-NSCZ-4FBz-TWPd-P4tx-PLW1LT
+
+# Создаем RAID0 логический том размером 50% от виртуальной группы (vg0) и называем его lv_raid0.
+user@Ubuntu:~/Desktop$ sudo lvcreate -i2 -I64 --type raid0 -l 50%VG -n lv_raid0 vg0
+  Rounding size <5.00 GiB (1279 extents) up to stripe boundary size 5.00 GiB (1280 extents).
+  Logical volume "lv_raid0" created.
+
+# Размечаем файловую систему
+user@Ubuntu:~/Desktop$ sudo mkfs.ext4 /dev/vg0/lv_raid0
+
+user@Ubuntu:~/Desktop$ sudo lvs -a -o name,segtype vg0
+  LV                  Type  
+  lv_raid0            raid0 
+  [lv_raid0_rimage_0] linear
+  [lv_raid0_rimage_1] linear
+
+# Монтируем логический том xthtp fstab
+# Узнаем UID нашего raid
+root@Ubuntu:~# lsblk -o TYPE,NAME,SIZE,FSTYPE,MOUNTPOINT,UUID
+TYPE NAME               		 SIZE  FSTYPE      MOUNTPOINT                         UUID
+disk sda                         50G                                                
+part sda1                        1M                                                
+part sda2                        513M  vfat        /boot/efi                          46A4-0CAA
+part sda3                        49.5G ext4        /                                  4094b350-0333-4d02-85b7-061b26584b0e
+disk sdb                         10G                                                
+part sdb1                        5G    LVM2_member                                    2QtpDK-CRFv-yKBM-2TU7-nyBb-edxH-1ysVZ5
+lvm  	vg0-lv_raid0_rimage_0    2.5G                                                
+lvm      vg0-lv_raid0            5G    ext4                                           6ee1cbc5-10e8-4c7c-a2bf-5e1685efb01c
+part sdb2                        5G                                                
+disk sdc                         10G                                                
+part sdc1                        5G    LVM2_member                                    IEbLWm-tXSn-25og-D4uE-Fxmp-T0w3-MrEkZe
+lvm    vg0-lv_raid0_rimage_1     2.5G                                                
+lvm     vg0-lv_raid0             5G    ext4                                           6ee1cbc5-10e8-4c7c-a2bf-5e1685efb01c
+part sdc2                        5G  
+
+#Добавляем строку в fstab
+UUID=6ee1cbc5-10e8-4c7c-a2bf-5e1685efb01c /mnt/raid ext4 defaults 0 0
