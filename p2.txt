@@ -1,0 +1,16 @@
+﻿user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git checkout -b develop
+Switched to a new branch 'develop'
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$  git push --set-upstream origin develop
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'develop' on GitHub by visiting:
+remote:      https://github.com/ESergiusz/dos14-Eremeev-GitFlow/pull/new/develop
+remote: 
+To github.com:ESergiusz/dos14-Eremeev-GitFlow.git
+ * [new branch]      develop -> develop
+branch 'develop' set up to track 'origin/develop'.
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git branch
+* develop
+  master

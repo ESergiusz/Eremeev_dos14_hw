@@ -1,0 +1,8 @@
+﻿user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git checkout -b release-v0.0.1
+Switched to a new branch 'release-v0.0.1'
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git branch
+  develop
+  feature-hw-14
+  master
+* release-v0.0.1

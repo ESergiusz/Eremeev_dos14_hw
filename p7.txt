@@ -1,0 +1,30 @@
+﻿user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git push --set-upstream origin release-v0.0.1
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'release-v0.0.1' on GitHub by visiting:
+remote:      https://github.com/ESergiusz/dos14-Eremeev-GitFlow/pull/new/release-v0.0.1
+remote: 
+To github.com:ESergiusz/dos14-Eremeev-GitFlow.git
+ * [new branch]      release-v0.0.1 -> release-v0.0.1
+branch 'release-v0.0.1' set up to track 'origin/release-v0.0.1'.
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git merge release-v0.0.1
+Updating 9c836c3..94dfe6b
+Fast-forward
+ README.md | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git tag -a v0.0.1 -m "add tag version-0.0.1"
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git tag
+v0.0.1
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git log
+commit 94dfe6ba92853fba381bfd08072b30e1810e43a6 (HEAD -> master, tag: v0.0.1, origin/release-v0.0.1, origin/master, origin/develop, release-v0.0.1, develop)
+Merge: 9c836c3 f2ab0e5
+Author: Eremeev Sergey <125600382+ESergiusz@users.noreply.github.com>
+Date:   Wed Apr 12 16:19:28 2023 +0300
+
+    Merge pull request #1 from ESergiusz/feature-hw-14
+    
+    Change Readme

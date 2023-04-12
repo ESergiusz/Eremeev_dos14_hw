@@ -1,0 +1,7 @@
+﻿user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git checkout -b feature-hw-14
+Switched to a new branch 'feature-hw-14'
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git branch
+  develop
+* feature-hw-14
+  master

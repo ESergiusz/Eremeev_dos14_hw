@@ -1,0 +1,17 @@
+﻿user@Ubuntu:~/IdeaProjects$ mkdir dos14-Eremeev-GitFlow
+
+user@Ubuntu:~/IdeaProjects$ cd dos14-Eremeev-GitFlow
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git init
+Initialized empty Git repository in /home/user/IdeaProjects/dos14-Eremeev-GitFlow/.git/
+
+user@Ubuntu:~/IdeaProjects$ vi README.md
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git add README.md
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git commit -m "Add Readme"
+[master (root-commit) 9c836c3] Add Readme
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+В IDEA INTELLIG нажал на кнопку "Share project on GitHub"
