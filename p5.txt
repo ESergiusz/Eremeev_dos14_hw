@@ -1,0 +1,10 @@
+﻿user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git checkout develop
+Switched to branch 'develop'
+Your branch is behind 'origin/develop' by 4 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git pull
+Updating 9c836c3..94dfe6b
+Fast-forward
+ README.md | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)

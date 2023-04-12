@@ -1,0 +1,35 @@
+﻿user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ vi README.md
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git status
+On branch feature-hw-14
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git add README.md
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git status
+On branch feature-hw-14
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git commit -m "Change Readme in branch feature-hw-14"
+[feature-hw-14 6b3b78f] Change Readme in branch feature-hw-14
+ 1 file changed, 1 insertion(+)
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$  git push --set-upstream origin feature-hw-14
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 310 bytes | 310.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'feature-hw-14' on GitHub by visiting:
+remote:      https://github.com/ESergiusz/dos14-Eremeev-GitFlow/pull/new/feature-hw-14
+remote: 
+To github.com:ESergiusz/dos14-Eremeev-GitFlow.git
+ * [new branch]      feature-hw-14 -> feature-hw-14
+branch 'feature-hw-14' set up to track 'origin/feature-hw-14'.

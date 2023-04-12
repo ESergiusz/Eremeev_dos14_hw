@@ -1,0 +1,6 @@
+﻿user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git branch -d  release-v0.0.1
+Deleted branch release-v0.0.1 (was 94dfe6b).
+
+user@Ubuntu:~/IdeaProjects/dos14-Eremeev-GitFlow$ git push --delete origin release-v0.0.1
+To github.com:ESergiusz/dos14-Eremeev-GitFlow.git
+ - [deleted]         release-v0.0.1
